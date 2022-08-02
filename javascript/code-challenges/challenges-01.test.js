@@ -10,11 +10,9 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 
 const addOne = (arr) => {
  
-arr.forEach((num, index) => {
-  arr[index] = num + 1;
-});
-
-console.log(arr);
+  let Numbers = [];
+  arr.forEach(num => Numbers.push(num + 1));
+  return Numbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -27,9 +25,9 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   
-  arr.forEach((String,index)=> {
-    arr[index]=String +"!";
-  });
+  let Strings = [];
+  arr.forEach(element => Strings.push(`${element}!`));
+  return Strings;
 
 };
 
@@ -43,13 +41,9 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   
-  const uppercase = [];
-
-arr.forEach(Element => {
-  uppercase.push(Element.toUpperCase());
-});
-
-console.log(uppercase);
+  let Uppercase = [];
+  arr.forEach(element => Uppercase.push(element.toUpperCase()));
+  return Uppercase;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -63,30 +57,16 @@ Use `forEach` to build a new array of strings, each string modified by the callb
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
-  let newWord = word.toUpperCase;
-
-newWord += '!';
-
-return newWord;
-
+  return (`${word.toUpperCase()}!`);
 };
-
 
 const speaker = (words, callback) => {
- 
-  let newArr = [];
-
-words.forEach(string => {
-
-newArr.push(callback);
-
-});
-
-return newArr;
-
+  // Solution code here...
+  let arrOfStrings = [];
+  words.forEach(element => arrOfStrings.push(callback(element)));
+  return arrOfStrings;
 };
 
-speaker(greeting);
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -105,14 +85,13 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr, value) => {
+const addValues = (arr, value) =>arr.push(value) ;
+  const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  let newArr=[];
-  newArr= arr.push(value);
-};
-
-const addNumbers = (num, arr, times, callback) => {
-  
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,9 +114,13 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
-  let array = [];
-  availableItems.forEach(function(ele){if (ele.available)array.push(ele)});
-  return array;
+  let arrOfStrings = [];
+  availableItems.forEach((element) => {
+    if (element.available === true) {
+      arrOfStrings.push(element.name);
+    }
+  });
+  return arrOfStrings;
 };
 
 /* ------------------------------------------------------------------------------------------------
