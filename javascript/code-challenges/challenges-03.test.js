@@ -10,11 +10,14 @@ Write a function called addTwo that takes in an array and adds two to every valu
 
 const addTwo = (arr) => {
   // Solution code here...
-  for(let i=0;i>arr.length;i++)
-  new arr= arr[i]+2;
-  return arr;
-};
+  let Array = [];
+  for(let i =0; i < arr.length; i++){
+    let addTwo = arr[i]+2;
+    Array.push(addTwo);
 
+  }
+  return Array;
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -25,11 +28,12 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  const onlyNumbers = arr.filter(
-    element => typeof element === 'number'
-  );
-  return onlyNumbers;
-
+  let array = arr.filter(element => {
+    if(typeof(element) === 'number'){
+      return true;
+    }
+  });
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,10 +46,12 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  var and = myArray.filter(name => name.includes('and'))
-  return and;
-
-
+  let Array = arr.filter(element => {
+    if(element.indexOf('and') > -1){
+      return true;
+    }
+  });
+  return Array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,10 +64,13 @@ For example, oddValues([1,2,3]) returns [1,3].
 
 const oddValues = (arr) => {
   // Solution code here...
-  let odds = arr.filter(n => n%2)
-  return odds;
-
-
+  let array = arr.filter(element => {
+    if(element %2 != 0){
+      return true;
+    }
+  }
+  );
+  return array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,8 +83,9 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
-  let arr3= forbiddenValues.filter(item => !arr.includes(item));
-  return arr3;
+  let Array = arr.filter(value =>
+    !forbiddenValues.includes(value));
+  return Array;
 
 };
 
