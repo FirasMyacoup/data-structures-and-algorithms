@@ -13,6 +13,7 @@ You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
   // Solution code here...
+  return people.map( person => `${person.firstName} ${person.lastName}`);
   
 
 };
@@ -26,9 +27,7 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
-  arr.reduce(function(addValues){
-  return addValues;
-  })
+  return arr.reduce( (lastNum, currentNum) => lastNum + currentNum, 0);
  
 
 };
@@ -47,10 +46,9 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 const addPurchases = (arr) => {
   // Solution code here...
-  arr.reduce()=(function(purchasePrice){
-    return "item + "+purchasePrice;
-  })
+  return arr.reduce((item1, item2) => item1 + item2.purchasePrice, 0);
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -62,10 +60,7 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  arr.reduce(function(obj, number) {
-    obj[number] = obj[number] ? ++obj[number] : 1;
-    return obj;
-}, {});
+  return arr.reduce( element => element + 1);
 
 };
 
@@ -127,9 +122,8 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  arr.reduce(function(name){
-    return name=starWarsData.name;
-  })
+  return arr.reduce( (previousName, currentName) => [...previousName, currentName.name], []);
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
