@@ -25,7 +25,7 @@ Returns: ['dyoll', 'eimaj'];
 const getNames = (arr) => {
   // Solution code here...
 
-  return arr.map(obj => obj.name.split('').reverse());
+  return arr.map(el => el.name.split('').reduce((prev, curr) => curr + prev, ''));
 
   
 };
@@ -39,8 +39,7 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 
 const appendTheEnd = (str) => {
   // Solution code here...
-  let str2 = str.concat('The end.')
-  return str2;
+  return str + ' The end.';
 
 };
 
@@ -80,7 +79,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 
 const addBirthYearProperty = (obj, year) => {
   // Solution code here...
-  obj.Bornedin = year;
+  obj['yearBorn'] = year;
 };
 
 /* ------------------------------------------------------------------------------------------------
