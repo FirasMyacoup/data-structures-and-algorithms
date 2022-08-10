@@ -26,16 +26,7 @@ let starWarsPeople = [
 
 const sortStarWarsCharacters = (starWarsArr) => {
   // Solution code here...
-  starWarsArr.sort((A,B)=>{
-    if(parseInt(A.height) > parseInt(B.height)){
-      return -1;
-    }
-    else if(parseInt(a.height) < parseInt(b.height)){
-      return 1;
-    }
-    else return 0;
-  });
-  return starWarsArr;
+  return starWarsArr.sort((a, b) => b.height - a.height);
 };
 
 
@@ -59,8 +50,7 @@ Write a function named joinArray that takes an array and joins all of the elemen
 
 const joinArray = (arr) => {
   // Solution code here...
-  let newArr = arr.join('');
-  return newArr
+  return arr.join(' ');
 };
 
 /* ------------------------------------------------------------------------------------------------
